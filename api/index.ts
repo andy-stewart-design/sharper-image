@@ -7,9 +7,9 @@ app.get("/", (c) => {
   return c.json({ message: "Hello from the sharp image api!" });
 });
 
-app.post("/", async (c) => {
-  const body = await c.req.json();
-  return c.json({ body });
-});
+// app.post("/", async (c) => {
+//   const body = await c.req.json();
+//   return c.json({ body });
+// });
 
 export default handle(app);
