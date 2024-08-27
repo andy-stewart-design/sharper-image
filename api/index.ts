@@ -1,9 +1,11 @@
 import { Hono } from "hono";
+import { cors } from "hono/cors";
 import { handle } from "@hono/node-server/vercel";
 
 const app = new Hono().basePath("/");
+app.use("/*", cors());
 
-app.get("/", (c) => {
+app.get("/", async (c) => {
   return c.json({ message: "Hello from the sharp image api!" });
 });
 
